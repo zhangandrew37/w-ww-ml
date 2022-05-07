@@ -1,5 +1,5 @@
- 
- ## Hydralit Examples<img src="https://github.com/TangleSpace/hydralit/raw/main/docs/images/hydra.png" alt="drawing" width="50"/>
+## Hydralit Examples<img src="https://github.com/TangleSpace/hydralit/raw/main/docs/images/hydra.png" alt="drawing" width="50"/>
+
 ## [Hydralit package](https://github.com/TangleSpace/hydralit) is a wrapping and template project to combine multiple independant (or somewhat dependant) Streamlit applications into a multi-page application.
 
 Currently the project implements a host application HydraApp and each child application simply needs to be a class deriving from the HydraHeadApp class and implement a single, simple method, run().
@@ -13,11 +13,13 @@ If you find this project useful, please give it a star or atleast a "hey! i find
 ### You can try it out by installing the project requirements and then running the sample secure app as below.
 
 ##### First install the project dependencies using the requirements.txt file, then let rip as below.
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Installation
+
 Hydralit can be installed from PyPI:
 
 ```bash
@@ -35,8 +37,8 @@ hydralit_example> streamlit run secure_app.py
 
 The host application code is shown below as an example of how such a multi-page application with authentication and lots of bells and whistles can be created with very little code, yet alot of configuration potential.
 
-
 #### secure_app.py
+
 ```python
 from hydralit import HydraApp
 import streamlit as st
@@ -52,13 +54,13 @@ if __name__ == '__main__':
         favicon="🐙",
         hide_streamlit_markers=True,
         #add a nice banner, this banner has been defined as 5 sections with spacing defined by the banner_spacing array below.
-        use_banner_images=["./resources/hydra.png",None,{'header':"<h1 style='text-align:center;padding: 0px 0px;color:grey;font-size:200%;'>Secure Hydralit Explorer</h1><br>"},None,"./resources/lock.png"], 
+        use_banner_images=["./resources/hydra.png",None,{'header':"<h1 style='text-align:center;padding: 0px 0px;color:grey;font-size:200%;'>Secure Hydralit Explorer</h1><br>"},None,"./resources/lock.png"],
         banner_spacing=[5,30,60,30,5],
-        use_navbar=True, 
+        use_navbar=True,
         navbar_sticky=False,
         navbar_animation=True,
         navbar_theme=over_theme,
-        
+
     )
 
     #Home button will be in the middle of the nav list now
@@ -81,7 +83,7 @@ if __name__ == '__main__':
 
     #we want to have secure access for this HydraApp, so we provide a login application
     #optional logout label, can be blank for something nicer!
-    app.add_app("Login", apps.LoginApp(title='Login'),is_login=True) 
+    app.add_app("Login", apps.LoginApp(title='Login'),is_login=True)
 
     #specify a custom loading app for a custom transition between apps, this includes a nice custom spinner
     app.add_loader_app(apps.MyLoadingApp(delay=0))
@@ -133,7 +135,7 @@ if __name__ == '__main__':
             'Home': ['Home'],
         }
 
-  
+
     #and finally just the entire app and all the children.
     app.run(complex_nav)
 
@@ -148,3 +150,4 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------
 
 ```
+# testrepo
