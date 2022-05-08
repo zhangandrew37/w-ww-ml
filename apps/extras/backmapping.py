@@ -314,10 +314,10 @@ class HeliosphericConstellation():
         ax.tick_params(axis='x', pad=10)
 
         ax.text(0.94, 0.16, 'Solar-MACH', 
-                fontfamily='Trebuchet MS', fontsize=28,
+                fontfamily='Open Sans', fontsize=28,
                 ha='right', va='bottom', transform=fig.transFigure)
         ax.text(0.94, 0.12, 'https://solar-mach.github.io',
-                fontfamily='Trebuchet MS', fontsize=18,
+                fontfamily='Open Sans', fontsize=18,
                 ha='right', va='bottom', transform=fig.transFigure)
         if transparent:
             fig.patch.set_alpha(0.0)

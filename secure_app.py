@@ -5,37 +5,33 @@ import streamlit as st
 
 #Only need to set these here as we are add controls outside of Hydralit, to customise a run Hydralit!
 st.set_page_config(page_title='Secure Hydralit Data Explorer',page_icon="🐙",layout='wide',initial_sidebar_state='auto',)
+st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
 
     over_theme = {'txc_inactive': '#FFFFFF'}
     #this is the host application, we add children to it and that's it!
     app = HydraApp(
-        title='Secure Hydralit Data Explorer',
-        favicon="🐙",
+        title='ML Web App',
+        favicon="⚙️",
         hide_streamlit_markers=True,
-        #add a nice banner, this banner has been defined as 5 sections with spacing defined by the banner_spacing array below.
-        # use_banner_images=["./resources/hydra.png",None,{'header':"<h1 style='text-align:center;padding: 0px 0px;color:grey;font-size:200%;'>Secure Hydralit Explorer</h1><br>"},None,"./resources/lock.png"], 
-        # banner_spacing=[5,30,60,30,5],
         use_navbar=True, 
         navbar_sticky=False,
         navbar_animation=True,
         navbar_theme=over_theme
     )
 
-    #Home button will be in the middle of the nav list now
     app.add_app("Home", icon="🏠", app=apps.HomeApp(title='Home'),is_home=True)
 
-    #add all your application classes here
-    app.add_app("Cheat Sheet", icon="📚", app=apps.CheatApp(title="Cheat Sheet"))
-    app.add_app("Sequency Denoising",icon="🔊", app=apps.WalshApp(title="Sequency Denoising"))
-    app.add_app("Sequency (Secure)",icon="🔊🔒", app=apps.WalshAppSecure(title="Sequency (Secure)"))
-    app.add_app("Solar Mach", icon="🛰️", app=apps.SolarMach(title="Solar Mach"))
-    app.add_app("Spacy NLP", icon="⌨️", app=apps.SpacyNLP(title="Spacy NLP"))
-    app.add_app("Uber Pickups", icon="🚖", app=apps.UberNYC(title="Uber Pickups"))
-    app.add_app("Solar Mach", icon="🛰️", app=apps.SolarMach(title="Solar Mach"))
-    app.add_app("Loader Playground", icon="⏲️", app=apps.LoaderTestApp(title="Loader Playground"))
-    app.add_app("Cookie Cutter", icon="🍪", app=apps.CookieCutterApp(title="Cookie Cutter"))
+    app.add_app("Project Setup", icon="", app=apps.ProjectSetupApp(title="Project Setup"))
+    app.add_app("Cheat Sheet", icon="", app=apps.CheatApp(title="Cheat Sheet"))
+    app.add_app("Sequency Denoising",icon="", app=apps.WalshApp(title="Sequency Denoising"))
+    app.add_app("Sequency (Secure)",icon="", app=apps.WalshAppSecure(title="Sequency (Secure)"))
+    app.add_app("Solar Mach", icon="", app=apps.SolarMach(title="Solar Mach"))
+    app.add_app("Spacy NLP", icon="", app=apps.SpacyNLP(title="Spacy NLP"))
+    app.add_app("Uber Pickups", icon="", app=apps.UberNYC(title="Uber Pickups"))
+    app.add_app("Solar Mach", icon="", app=apps.SolarMach(title="Solar Mach"))
+    app.add_app("Loader Playground", icon="", app=apps.LoaderTestApp(title="Loader Playground"))
 
     #we have added a sign-up app to demonstrate the ability to run an unsecure app
     #only 1 unsecure app is allowed
@@ -78,7 +74,7 @@ if __name__ == '__main__':
             'Hotstepper 🔥': ["Sequency Denoising","Sequency (Secure)"],
             'Clustering': ["Uber Pickups"],
             'NLP': ["Spacy NLP"],
-            'Cookie Cutter': ['Cookie Cutter']
+            'Project Setup': ['Project Setup']
         }
     elif user_access_level == 1:
         complex_nav = {
@@ -88,7 +84,7 @@ if __name__ == '__main__':
             'Hotstepper 🔥': ["Sequency Denoising"],
             'Clustering': ["Uber Pickups"],
             'NLP': ["Spacy NLP"],
-            'Cookie Cutter': ['Cookie Cutter']
+            'Project Setup': ['Project Setup']
         }
     else:
         complex_nav = {

@@ -17,19 +17,12 @@ class HomeApp(HydraHeadApp):
     def run(self):
 
         try:
-            st.markdown("<h1 style='text-align:center;padding: 0px 0px;color:black;font-size:200%;'>Home</h1>",unsafe_allow_html=True)     
-            st.markdown("<h2 style='text-align: center;'>This example was written using the <a href = https://github.com/TangleSpace/hydralit>Hydralit</a> library. Sourecode for this example is located <a href = https://github.com/TangleSpace/hydralit-example>here</a>.</h2>",unsafe_allow_html=True)
-
+            st.markdown("<h1 style='text-align: center; black: red;'>ML Web App</h1>", unsafe_allow_html=True)
             col_header_logo_left_far, col_header_logo_left,col_header_text,col_header_logo_right,col_header_logo_right_far = st.columns([1,2,2,2,1])
-            
-            #col_header_logo_right_far.image(os.path.join(".","resources","hydra.png"),width=100,)
-
-            if col_header_text.button('This will open a new tab and go'):
-                self.do_redirect("https://hotstepper.readthedocs.io/index.html")
 
             _,_,col_logo, col_text,_ = st.columns(MENU_LAYOUT)
-            col_logo.image(os.path.join(".","resources","data.png"),width=80,)
-            col_text.subheader("This explorer has multiple applications, each application could be run individually, however where is the fun in that? Below is a sample home page.")
+            col_logo.image(os.path.join(".","resources","ml.png"),width=80,)
+            col_text.subheader("A simple no-code machine tool designed for professionals.")
             st.markdown('<br><br>',unsafe_allow_html=True)
 
 
