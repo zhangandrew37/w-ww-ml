@@ -20,5 +20,4 @@ jinja2
 base58
 pillow
 scikit-learn
-dataprep
 seaborn
