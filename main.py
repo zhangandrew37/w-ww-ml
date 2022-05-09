@@ -4,13 +4,13 @@ import apps
 import streamlit as st
 
 #Only need to set these here as we are add controls outside of Hydralit, to customise a run Hydralit!
-st.set_page_config(page_title='Secure Hydralit Data Explorer',page_icon="🐙",layout='wide',initial_sidebar_state='auto',)
+st.set_page_config(page_title='Secure Hydralit Data Explorer',page_icon="⚙️",layout='wide',initial_sidebar_state='auto',)
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
 
     over_theme = {'txc_inactive': '#FFFFFF'}
-    #this is the host application, we add children to it and that's it!
     app = HydraApp(
         title='ML Web App',
         favicon="⚙️",
@@ -24,6 +24,7 @@ if __name__ == '__main__':
     app.add_app("Home", icon="🏠", app=apps.HomeApp(title='Home'),is_home=True)
 
     app.add_app("Project Setup", icon="", app=apps.ProjectSetupApp(title="Project Setup"))
+    app.add_app("Data", icon="", app=apps.DataApp(title="Data"))
     app.add_app("Cheat Sheet", icon="", app=apps.CheatApp(title="Cheat Sheet"))
     app.add_app("Sequency Denoising",icon="", app=apps.WalshApp(title="Sequency Denoising"))
     app.add_app("Sequency (Secure)",icon="", app=apps.WalshAppSecure(title="Sequency (Secure)"))
@@ -31,7 +32,6 @@ if __name__ == '__main__':
     app.add_app("Spacy NLP", icon="", app=apps.SpacyNLP(title="Spacy NLP"))
     app.add_app("Uber Pickups", icon="", app=apps.UberNYC(title="Uber Pickups"))
     app.add_app("Solar Mach", icon="", app=apps.SolarMach(title="Solar Mach"))
-    app.add_app("Loader Playground", icon="", app=apps.LoaderTestApp(title="Loader Playground"))
 
     #we have added a sign-up app to demonstrate the ability to run an unsecure app
     #only 1 unsecure app is allowed
@@ -40,9 +40,6 @@ if __name__ == '__main__':
     #we want to have secure access for this HydraApp, so we provide a login application
     #optional logout label, can be blank for something nicer!
     app.add_app("Login", apps.LoginApp(title='Login'),is_login=True) 
-
-    #specify a custom loading app for a custom transition between apps, this includes a nice custom spinner
-    app.add_loader_app(apps.MyLoadingApp(delay=0))
 
     #we can inject a method to be called everytime a user logs out
     #---------------------------------------------------------------------
@@ -69,22 +66,22 @@ if __name__ == '__main__':
     if user_access_level > 1:
         complex_nav = {
             'Home': ['Home'],
-            'Loader Playground': ['Loader Playground'],
+            'Project Setup': ['Project Setup'],
+            'Data': ['Data'],
             'Intro 🏆': ['Cheat Sheet',"Solar Mach"],
             'Hotstepper 🔥': ["Sequency Denoising","Sequency (Secure)"],
             'Clustering': ["Uber Pickups"],
             'NLP': ["Spacy NLP"],
-            'Project Setup': ['Project Setup']
         }
     elif user_access_level == 1:
         complex_nav = {
             'Home': ['Home'],
-            'Loader Playground': ['Loader Playground'],
+            'Project Setup': ['Project Setup'],
+            'Data': ['Data'],
             'Intro 🏆': ['Cheat Sheet',"Solar Mach"],
             'Hotstepper 🔥': ["Sequency Denoising"],
             'Clustering': ["Uber Pickups"],
-            'NLP': ["Spacy NLP"],
-            'Project Setup': ['Project Setup']
+            'NLP': ["Spacy NLP"]
         }
     else:
         complex_nav = {

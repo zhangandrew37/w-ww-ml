@@ -9,4 +9,4 @@ from apps.cheat_app import CheatApp
 from apps.myloading_app import MyLoadingApp
 from apps.signup import SignUpApp
 from apps.project_setup import ProjectSetupApp
-from apps.load_app import LoaderTestApp
+from apps.data import DataApp

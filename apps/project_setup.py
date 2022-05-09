@@ -1,9 +1,6 @@
-from apps.cheat_app import CheatApp
 import streamlit as st
 from hydralit import HydraHeadApp
 import global_
-import apps
-from apps import cheat_app
 
 class ProjectSetupApp(HydraHeadApp):
 
@@ -28,10 +25,11 @@ class ProjectSetupApp(HydraHeadApp):
                 df = st.file_uploader("Upload your data (CSV)")
                 submit = st.form_submit_button(label= "Create Project")
                 if (submit):
-                    st.write("If you are not being redirected or if you encounter other issues, please use the navbar at the top to navigate through the app.")
+                    # self.do_redirect('Data')
+                    st.warning('If you are not being redirected or if you encounter other issues, please use the navbar at the top to navigate through the app.')
 
       
         except Exception as e:
             st.image("./resources/failure.png",width=100,)
-            st.error('An error has occurred, someone will be punished for your inconvenience, we humbly request you try again.')
+            st.error('An error has occurred. If you are not being redirected or if you encounter other issues, please use the navbar at the top to navigate through the app.')
             st.error('Error details: {}'.format(e))
