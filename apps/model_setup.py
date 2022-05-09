@@ -2,7 +2,7 @@ import streamlit as st
 from hydralit import HydraHeadApp
 import global_
 
-class ProjectSetupApp(HydraHeadApp):
+class ModelSetupApp(HydraHeadApp):
 
     def __init__(self, title = 'Loader', delay=0, **kwargs):
         self.__dict__.update(kwargs)

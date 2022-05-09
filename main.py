@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
     app.add_app("Project Setup", icon="", app=apps.ProjectSetupApp(title="Project Setup"))
     app.add_app("Data", icon="", app=apps.DataApp(title="Data"))
+    app.add_app("Model Setup", icon="", app=apps.ModelSetupApp(title="Model Setup"))
     app.add_app("Cheat Sheet", icon="", app=apps.CheatApp(title="Cheat Sheet"))
     app.add_app("Sequency Denoising",icon="", app=apps.WalshApp(title="Sequency Denoising"))
     app.add_app("Sequency (Secure)",icon="", app=apps.WalshAppSecure(title="Sequency (Secure)"))
@@ -68,6 +69,7 @@ if __name__ == '__main__':
             'Home': ['Home'],
             'Project Setup': ['Project Setup'],
             'Data': ['Data'],
+            'Model Setup': ['Model Setup'],
             'Intro 🏆': ['Cheat Sheet',"Solar Mach"],
             'Hotstepper 🔥': ["Sequency Denoising","Sequency (Secure)"],
             'Clustering': ["Uber Pickups"],
@@ -78,6 +80,7 @@ if __name__ == '__main__':
             'Home': ['Home'],
             'Project Setup': ['Project Setup'],
             'Data': ['Data'],
+            'Model Setup': ['Model Setup'],
             'Intro 🏆': ['Cheat Sheet',"Solar Mach"],
             'Hotstepper 🔥': ["Sequency Denoising"],
             'Clustering': ["Uber Pickups"],
