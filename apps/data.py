@@ -6,10 +6,10 @@ import pickle as pkle
 import os.path
 import pandas as pd
 import seaborn as sb
-from dataprep.eda import create_report
+#from dataprep.eda import create_report
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_sgiplit
 
 class DataApp(HydraHeadApp):
 
@@ -24,25 +24,25 @@ class DataApp(HydraHeadApp):
             example_data = open("Data-AI-1.csv")
             df = pd.read_csv(example_data)
 
-            def generate_report():
-                    left, right = st.columns(2)
-                    with left:
-                        if st.button('View detailed report in new tab'):
-                            report = create_report(df)
-                            report.show_browser()
-                    with right:
-                        if st.button('Download detailed report'):
-                                report = create_report(df)
-                                report.save('Report')
-                                report.show_browser()
+            # def generate_report():
+            #         left, right = st.columns(2)
+            #         with left:
+            #             if st.button('View detailed report in new tab'):
+            #                 report = create_report(df)
+            #                 report.show_browser()
+            #         with right:
+            #             if st.button('Download detailed report'):
+            #                     report = create_report(df)
+            #                     report.save('Report')
+            #                     report.show_browser()
 
-            def generate_plot():
-                numeric_columns = df.select_dtypes(['float', 'int']).columns
-                st.sidebar.subheader("Scatter Plot Setup")
-                select_box1 = st.sidebar.selectbox(label='X axis', options=numeric_columns)
-                select_box2 = st.sidebar.selectbox(label='Y axis', options=numeric_columns)
-                g = sb.relplot(x=select_box1, y=select_box2, data=df, height=5, aspect=15.7/8.27)
-                st.pyplot()
+            # def generate_plot():
+            #     numeric_columns = df.select_dtypes(['float', 'int']).columns
+            #     st.sidebar.subheader("Scatter Plot Setup")
+            #     select_box1 = st.sidebar.selectbox(label='X axis', options=numeric_columns)
+            #     select_box2 = st.sidebar.selectbox(label='Y axis', options=numeric_columns)
+            #     g = sb.relplot(x=select_box1, y=select_box2, data=df, height=5, aspect=15.7/8.27)
+            #     st.pyplot()
             
             from global_ import type
             st.title('Data Pre-processing')
@@ -157,7 +157,7 @@ class DataApp(HydraHeadApp):
                         st.code(row[0])
 
                 elif data_choice == 'Data Preview':
-                    generate_report()
+                    #generate_report()
                     st.write(df)
 
                 st.progress(3)
@@ -169,8 +169,8 @@ class DataApp(HydraHeadApp):
                 st.progress(4)
             elif choice == 'Data Visualization':
                 st.subheader('Data Visualization')
-                generate_report()
-                generate_plot()
+                #generate_report()
+                #generate_plot()
                 st.progress(5)
 
       
