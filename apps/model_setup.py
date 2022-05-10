@@ -62,5 +62,5 @@ class ModelSetupApp(HydraHeadApp):
       
         except Exception as e:
             st.image("./resources/failure.png",width=100,)
-            st.error('An error has occurred. If you are not being redirected or if you encounter other issues, please use the navbar at the top to navigate through the app.')
+            st.error('An error has occurred. If you are not being redirected or if you encounter similar issues, please use the navbar at the top to navigate through the app.')
             st.error('Error details: {}'.format(e))

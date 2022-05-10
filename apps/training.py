@@ -1,6 +1,7 @@
 import streamlit as st
 from hydralit import HydraHeadApp
 import global_
+from PIL import Image
 
 class TrainingApp(HydraHeadApp):
 
@@ -30,17 +31,19 @@ class TrainingApp(HydraHeadApp):
             st.write("")
             st.markdown("**Compare with other algorithms:**")
             st.write("")
-            col1, col2 = st.columns(2)
-            with col1:
-                img = Image.open("assets/images/lazypredict.png")
-                st.image(img, width=500)
-            with col2:
-                img = Image.open("assets/images/lazyplot.png")
-                st.image(img, width=800)
+            st.warning('Feature not yet available on the web hosted version of this app. Please run locally using the [source code](https://github.com/zhangandrew37/w-ww) for full features.')
+
+            # col1, col2 = st.columns(2)
+            # with col1:
+            #     img = Image.open("assets/images/lazypredict.png")
+            #     st.image(img, width=500)
+            # with col2:
+            #     img = Image.open("assets/images/lazyplot.png")
+            #     st.image(img, width=800)
             
 
       
         except Exception as e:
             st.image("./resources/failure.png",width=100,)
-            st.error('An error has occurred. If you are not being redirected or if you encounter other issues, please use the navbar at the top to navigate through the app.')
+            st.error('An error has occurred. If you are not being redirected or if you encounter similar issues, please use the navbar at the top to navigate through the app.')
             st.error('Error details: {}'.format(e))

@@ -30,14 +30,6 @@ if __name__ == '__main__':
     app.add_app("Prediction", icon="", app=apps.PredictionApp(title="Prediction"))
     app.add_app("Dashboard", icon="", app=apps.DashboardApp(title="Dashboard"))
 
-    app.add_app("Cheat Sheet", icon="", app=apps.CheatApp(title="Cheat Sheet"))
-    app.add_app("Sequency Denoising",icon="", app=apps.WalshApp(title="Sequency Denoising"))
-    app.add_app("Sequency (Secure)",icon="", app=apps.WalshAppSecure(title="Sequency (Secure)"))
-    app.add_app("Solar Mach", icon="", app=apps.SolarMach(title="Solar Mach"))
-    app.add_app("Spacy NLP", icon="", app=apps.SpacyNLP(title="Spacy NLP"))
-    app.add_app("Uber Pickups", icon="", app=apps.UberNYC(title="Uber Pickups"))
-    app.add_app("Solar Mach", icon="", app=apps.SolarMach(title="Solar Mach"))
-
     #we have added a sign-up app to demonstrate the ability to run an unsecure app
     #only 1 unsecure app is allowed
     app.add_app("Signup", icon="🛰️", app=apps.SignUpApp(title='Signup'), is_unsecure=True)
