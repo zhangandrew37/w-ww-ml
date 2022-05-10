@@ -169,6 +169,7 @@ class DataApp(HydraHeadApp):
                 st.progress(4)
             elif choice == 'Data Visualization':
                 st.subheader('Data Visualization')
+                st.warning('Feature not yet available on the web hosted version of this app. Please run locally using the [source code](https://github.com/zhangandrew37/w-ww) for full features.')
                 #generate_report()
                 #generate_plot()
                 st.progress(5)
